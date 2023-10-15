@@ -1,0 +1,38 @@
+Node.js Code for REST API:
+
+Here's an example of how you can implement a REST API using Node.js and the Express framework. This code includes the five basic HTTP methods: GET, POST, PUT, PATCH, and DELETE.
+
+```javascript
+// Import required modules
+const express = require('express');
+const bodyParser = require('body-parser');
+
+// Create the express app
+const app = express();
+
+// Configure middleware to parse request bodies
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// GET method
+app.get('/api/resource', (req, res) => {
+  // Retrieve and return the resource
+  res.json({ message: 'GET method called successfully' });
+});
+
+// POST method
+app.post('/api/resource', (req, res) => {
+  // Create a new resource using the request body
+  const resource = req.body;
+  res.json({ message: 'POST method called successfully' });
+});
+
+// PUT method
+app.put('/api/resource/:id', (req, res) => {
+  const resourceId = req.params.id;
+  // Update the resource with the specified ID using the request body
+  res.json({ message: 'PUT method called successfully' });
+});
+
+// PATCH method
+app.patch('/api/resource/:

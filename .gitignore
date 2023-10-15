@@ -1,0 +1,4 @@
+.env
+openAITest.py
+venv/
+.idea/
